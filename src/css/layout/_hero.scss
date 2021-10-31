@@ -1,0 +1,16 @@
+.hero {
+  &--full {
+    background-size: cover;
+    margin-bottom: 7rem;
+  }
+
+  &--home {
+  //  background-image: url("../../images/hero-home.jpg");
+    height: 100vh;
+  }
+
+  &--category {
+    height: calc( 100vh - 130px);
+    background-position: top center;
+  }
+}

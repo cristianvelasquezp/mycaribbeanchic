@@ -1,0 +1,19 @@
+@mixin clearfix {
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respontd( $breakpoint ) {
+  @if( $breakpoint == tab-port ) {
+    @media (min-width: 601px) { @content }
+  }
+  @if( $breakpoint == tab-land ) {
+    @media (min-width: 901px) { @content }
+  }
+  @if( $breakpoint == desktop ) {
+    @media (min-width: 1200px) { @content }
+  }
+}

@@ -1,0 +1,60 @@
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  line-height: 2.2rem;
+  font-size: $default-font-size;
+  color: $color-text-primary;
+  -webkit-font-smoothing: antialiased;
+}
+
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heading-tertiary {
+  font-size: 2rem;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  font-weight: 400;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+  color: $color-text-primary;
+  text-decoration: none;
+}
+
+.price {
+
+  &--discount {
+    text-decoration: line-through;
+  }
+
+  &--regular {
+
+  }
+}
+
+[class^="brand"] {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.brand {
+  &--detail {
+    font-size: 1.1rem;
+  }
+}
+

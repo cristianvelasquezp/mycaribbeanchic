@@ -1,0 +1,172 @@
+.header {
+  padding: 2.5rem 0;
+  width: 100%;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__bar-menu {
+    float: left;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    z-index: 4000;
+    cursor: pointer;
+
+    @include respontd( desktop ) {
+      display: none;
+    }
+  }
+
+
+  &__bar-menu-icon {
+    position: relative;
+  }
+
+  &__bar-menu-icon,
+  &__bar-menu-icon:before,
+  &__bar-menu-icon:after{
+    width: 3rem;
+    height: 2px;
+    background-color: black;
+    display: inline-block;
+    transition: all .2s;
+  }
+
+  &__bar-menu-icon:before,
+  &__bar-menu-icon:after{
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  &__bar-menu-icon:before{
+    top: -1rem;
+  }
+
+  &__bar-menu-icon:after{
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__bar-menu {
+    position: fixed;
+
+    @include respontd( desktop) {
+      display: none;
+    }
+  }
+
+  &__checkbox:checked + &__bar-menu &__bar-menu-icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__bar-menu &__bar-menu-icon:before,
+  &__checkbox:checked + &__bar-menu &__bar-menu-icon:after {
+    top: 0;
+  }
+
+  &__checkbox:checked + &__bar-menu &__bar-menu-icon:before {
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__bar-menu &__bar-menu-icon:after {
+    transform: rotate(-135deg);
+  }
+
+  &__checkbox:checked ~ &__mobile-menu-background {
+    -webkit-transform: scale(1000);
+    transform: scale(1000);
+    position: fixed;
+
+    @include respontd( desktop ) {
+      display: none;
+    }
+  }
+
+  &__checkbox:checked ~  &__logo-box {
+    position: fixed;
+    width: 100%;
+
+    @include respontd( desktop ) {
+      position: inherit;
+      width: auto;
+    }
+  }
+
+  &__menu-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__logo-box {
+    text-align: center;
+    z-index: 3000;
+
+    @include respontd( desktop ) {
+      float: left;
+    }
+  }
+
+  &__logo {
+    height: 7rem;
+  }
+
+  &__mobile-menu-background{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: #ffffff;
+    z-index: 1000;
+    top: -3rem;
+    left: 0;
+    border-radius: 50%;
+    transition: .2s;
+  }
+
+  &__menus {
+    padding: 10rem 5rem 0;
+    position: fixed;
+    z-index: 2000;
+    width: 100%;
+    display: none;
+
+    @include respontd( desktop ) {
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      display: block !important;
+      position: inherit;
+    }
+  }
+
+  &__checkbox:checked ~ &__menus {
+    display: block;
+    max-width: calc( 100% - #{$content-padding} * 2);
+
+    @include respontd( desktop ) {
+      max-width: 100%;
+    }
+  }
+
+  &__menu--tools {
+    margin-bottom: 3rem;
+
+    @include respontd( desktop ) {
+      margin-bottom: 0;
+      float: right;
+    }
+  }
+
+  &__menu--main {
+    text-align: center;
+  }
+
+  &--home {
+    position: absolute;
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,37 @@
+.item-container {
+
+  text-align: center;
+
+  &__image-box {
+    overflow: hidden;
+  }
+
+  &__image {
+    vertical-align: bottom;
+    transition: all 0.5s;
+    &:hover {
+
+      transform: scale(1.1);
+    }
+  }
+
+  &__content-box {
+   [class^=item-container] {
+     font-weight: normal;
+
+     &:not(:last-child) {
+       margin-bottom: 0.5rem;
+     }
+   }
+  }
+
+  &__brand {
+    text-transform: uppercase;
+    margin-top: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,152 @@
+.menu__item--tools {
+   position: relative;
+
+  .icon-shopping-cart-menu {
+    position: relative;
+  }
+
+  .total-pieces {
+    position: absolute;
+    background: #101820;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 17px;
+    border-radius: 50%;
+    right: -5px;
+    top: -10px;
+    font-family: "Proxima Nova";
+  }
+
+  .sub-menu {
+    display: none;
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    z-index: 100;
+
+    li {
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.shopping-cart {
+  width: 30rem;
+  background: #fff;
+
+  &__header {
+    padding: 1.5rem;
+    border-bottom: 0.1rem solid #e4e4e4;
+  }
+
+  &_content{
+    position: relative;
+  }
+
+  &__item {
+    display: block;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    border-bottom: 0.1rem solid $border-color-tertiary;
+    position: relative;
+  }
+
+  &__item-img {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 6px -4px #999;
+    line-height: 0;
+
+    a {
+      width: 72px;
+      height: auto;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item-detail {
+    float: left;
+    padding-left: 0.3rem;
+  }
+
+  &__item-detail{
+
+   > h5,
+   > span {
+      font-size: $font-size-shopping-cart;
+     display: block;
+     padding: 0.3rem;
+    }
+  }
+
+  &__item-delete {
+    display: block;
+    font-size: 1.5rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    text-align: center;
+    line-height: 1;
+    border-radius: 100%;
+    color: red;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.3rem;
+
+    &:hover {
+      color: #fff!important;
+      background: red;
+    }
+  }
+
+  &__buttons {
+    padding: 1rem 1rem 0;
+  }
+
+  &__go-shop,
+  &__cart-btn {
+    background-color: $background-color-btn-primary;
+    color: $color-text-primary;
+  }
+
+  &__checkout-btn {
+    background-color: $background-color-btn-secondary;
+    color: $color-white;
+  }
+
+  &__go-shop,
+  &__cart-btn,
+  &__checkout-btn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 1.4rem;
+    transition: all 0.35s;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}

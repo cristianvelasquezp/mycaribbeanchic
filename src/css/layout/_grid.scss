@@ -1,0 +1,55 @@
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @include respontd( desktop ) {
+    padding: 0;
+  }
+
+  &:first-child {
+    margin-bottom: $gutter-vertical;
+  }
+
+  &:not(:last-child) {
+    @include respontd( table-port ) {
+      margin-bottom: $gutter-vertical;
+    }
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    float: left;
+    padding-bottom: 5rem;
+    @include respontd( table-port ) {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      @include respontd( table-port ) {
+        margin-right: $gutter-horizontal;
+      }
+    }
+  }
+
+
+  .col-1-of-2 {
+    @include respontd( table-port ) {
+      width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+  }
+
+  .col-1-of-3 {
+    @include respontd( table-port ) {
+      width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+  }
+
+  .col-2-of-3 {
+    @include respontd(table-port) {
+      width: calc(2 * ( (100% - 2 * #{$gutter-horizontal}) / 3 ) + #{$gutter-horizontal} );
+    }
+  }
+}
+

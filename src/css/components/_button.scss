@@ -1,0 +1,23 @@
+.btn{
+
+}
+
+.btn-text {
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+
+  &--category-home{
+    color: $color-text-secondary;
+    border-bottom: 0.1rem solid $color-black;
+    padding-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+
+    &:hover,
+    &:active {
+      border-bottom-color: $color-primary;
+    }
+  }
+}

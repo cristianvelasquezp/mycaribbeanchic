@@ -1,0 +1,44 @@
+.input {
+  height: 4rem;
+  padding: 0 1rem;
+  border: 0.1rem solid $border-color-secondary;
+  color: $color-text-primary;
+  background: $background-color-input;
+  box-sizing: border-box;
+
+  &__search-bottom {
+    position: relative;
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: -4rem;
+    height: 4rem;
+    line-height: 4rem !important;
+    width: 4rem;
+    padding: 0;
+    text-align: center;
+    color: $color-text-primary;
+  }
+
+  &--search {
+    width: 100%;
+    padding-right: 7rem;
+  }
+
+  &--search-bottom {
+    width: 4rem;
+    height: 4rem;
+    text-indent: -9000px;
+    z-index: 2;
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    left: -4rem;
+    border: 0;
+  }
+
+  &--select{
+    min-width:20rem;
+  }
+}

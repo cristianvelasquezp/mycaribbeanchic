@@ -1,0 +1,41 @@
+.home-category {
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: 7rem;
+  }
+
+  &__image-container{
+    position: relative;
+    text-align: center;
+  }
+
+  &__image {
+    padding: 0 4rem;
+    box-sizing: border-box;
+  }
+
+  &__image-box:before,
+  &__image-box:after {
+    position: absolute;
+    content: "";
+    width: 3rem;
+    height: 90%;
+    background-color: $background-color-border-category;
+    top: 5%;
+    display: block;
+  }
+
+  &__image-box:before {
+    left: 0;
+  }
+  &__image-box:after {
+    right: 0;
+  }
+
+  &__about p {
+    max-width: 480px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+
+}
