@@ -1,15 +1,13 @@
 <!doctype html>
 
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>A Basic HTML5 Template</title>
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <header class="header <?php if (is_home()) { ?> header--home<?php } ?>">
     <div class="container">
         <input type="checkbox" class="header__checkbox" id="bar-menu">
@@ -17,7 +15,7 @@
             <span class="header__bar-menu-icon"></span>
         </label>
         <div class="header__logo-box">
-            <a href="#"><img class="img header__logo" src="http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/logo.svg" alt="logo"></a>
+            <a href="<?php echo site_url(); ?>"><img class="img header__logo" src="http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/logo.svg" alt="logo"></a>
         </div>
         <div class="header__mobile-menu-background"></div>
         <div class="header__menus">
