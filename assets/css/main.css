@@ -42,12 +42,17 @@ body {
   margin-bottom: 4rem; }
 
 .heading-tertiary {
-  font-size: 2rem; }
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 3rem; }
 
-.paragraph {
+.heading-main {
+  text-transform: uppercase; }
+
+.paragraph, p {
   font-size: 1.6rem;
   font-weight: 400; }
-  .paragraph:not(:last-child) {
+  .paragraph:not(:last-child), p:not(:last-child) {
     margin-bottom: 2rem; }
 
 a {
@@ -334,6 +339,9 @@ a {
       padding: 0; } }
   .row:first-child {
     margin-bottom: 3rem; }
+  @media (min-width: 601px) {
+    .row:not(:last-child) {
+      margin-bottom: 3rem; } }
   .row:after {
     content: "";
     display: table;
@@ -341,6 +349,21 @@ a {
   .row [class^="col-"] {
     float: left;
     padding-bottom: 5rem; }
+    @media (min-width: 601px) {
+      .row [class^="col-"] {
+        padding-bottom: 0; } }
+    @media (min-width: 601px) {
+      .row [class^="col-"]:not(:last-child) {
+        margin-right: 1.5rem; } }
+  @media (min-width: 601px) {
+    .row .col-1-of-2 {
+      width: calc((100% - 1.5rem) / 2); } }
+  @media (min-width: 601px) {
+    .row .col-1-of-3 {
+      width: calc((100% - 2 * 1.5rem) / 3); } }
+  @media (min-width: 601px) {
+    .row .col-2-of-3 {
+      width: calc(2 * ( (100% - 2 * 1.5rem) / 3 ) + 1.5rem); } }
 
 .header {
   padding: 2.5rem 0;

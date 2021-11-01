@@ -10,3 +10,48 @@
 </head>
 
 <body>
+<header class="header <?php if (is_home()) { ?> header--home<?php } ?>">
+    <div class="container">
+        <input type="checkbox" class="header__checkbox" id="bar-menu">
+        <label for="bar-menu" class="header__bar-menu">
+            <span class="header__bar-menu-icon"></span>
+        </label>
+        <div class="header__logo-box">
+            <a href="#"><img class="img header__logo" src="http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/logo.svg" alt="logo"></a>
+        </div>
+        <div class="header__mobile-menu-background"></div>
+        <div class="header__menus">
+            <div class="header__menu--tools">
+                <ul class="menu menu--tools">
+                    <li class="menu__item menu__item--tools menu__item--search">
+                        <form class="form form--search" name="search" action="#">
+                            <input class="input input--search" type="text" placeholder="Search...">
+                            <span class="input__search-bottom">
+                                <input class="input input--search-bottom" type="submit" value="Search">
+                                <i class="input__search-icon icon fas fa-search"></i>
+                            </span>
+                        </form>
+                        <i class="icon icon__search--desktop fas fa-search"></i>
+                    </li>
+                    <li class="menu__item menu__item--tools"><i class="icon far fa-user"></i></li>
+                    <li class="menu__item menu__item--tools"><i class="icon fas fa-shopping-bag"></i></li>
+                </ul>
+            </div>
+            <nav class="header__menu--main" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <ul class="menu">
+                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Clothing</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Jewelry</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Accessories</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Brands</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Sale</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<?php if (is_home()) { ?>
+<section class="hero hero--full hero--home" style="background-image: url(http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/hero-home-scaled.jpg)">
+    <div class="container"></div>
+</section>
+<?php }

@@ -15,10 +15,16 @@ body {
 }
 
 .heading-tertiary {
-  font-size: 2rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
 }
 
-.paragraph {
+.heading-main {
+  text-transform: uppercase;
+}
+
+.paragraph, p{
   font-size: $default-font-size;
   font-weight: 400;
 

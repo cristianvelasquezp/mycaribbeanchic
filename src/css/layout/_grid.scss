@@ -12,7 +12,7 @@
   }
 
   &:not(:last-child) {
-    @include respontd( table-port ) {
+    @include respontd( tab-port ) {
       margin-bottom: $gutter-vertical;
     }
   }
@@ -22,12 +22,12 @@
   [class^="col-"] {
     float: left;
     padding-bottom: 5rem;
-    @include respontd( table-port ) {
+    @include respontd( tab-port ) {
       padding-bottom: 0;
     }
 
     &:not(:last-child) {
-      @include respontd( table-port ) {
+      @include respontd( tab-port ) {
         margin-right: $gutter-horizontal;
       }
     }
@@ -35,19 +35,19 @@
 
 
   .col-1-of-2 {
-    @include respontd( table-port ) {
+    @include respontd( tab-port ) {
       width: calc((100% - #{$gutter-horizontal}) / 2);
     }
   }
 
   .col-1-of-3 {
-    @include respontd( table-port ) {
+    @include respontd( tab-port ) {
       width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
     }
   }
 
   .col-2-of-3 {
-    @include respontd(table-port) {
+    @include respontd(tab-port) {
       width: calc(2 * ( (100% - 2 * #{$gutter-horizontal}) / 3 ) + #{$gutter-horizontal} );
     }
   }
