@@ -8,17 +8,15 @@
             </div>
             <div class="footer__content">
                 <h4>Support</h4>
-                <ul class="menu">
-                    <li><a href="<?php echo site_url('/return-policy'); ?>">Return Policy</a></li>
-                    <li><a href="<?php echo site_url('/privacy-policy-2'); ?>">Privacy Policy</a></li>
-                </ul>
+                <?php wp_nav_menu(array(
+                        'theme_location' => 'supportMenu',
+                )) ?>
             </div>
             <div class="footer__content">
                 <h4>Quick Links</h4>
-                <ul class="menu">
-                    <li><a href="">My Account</a></li>
-                    <li><a href="<?php echo site_url('/about-us'); ?>">About Us</a></li>
-                </ul>
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'quickLinksMenu',
+                )) ?>
             </div>
             <div class="footer__content">
                 <h4>Contact Us</h4>

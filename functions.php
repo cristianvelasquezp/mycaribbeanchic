@@ -15,6 +15,9 @@ function add_mime_types($mimes) {
 add_filter('upload_mimes', 'add_mime_types');
 
 function cc_features() {
+    register_nav_menu('mainMenu', 'Main Menu');
+    register_nav_menu('supportMenu', 'Support Menu');
+    register_nav_menu('quickLinksMenu', 'Quick Links Menu');
     add_theme_support('title-tag');
 }
 
