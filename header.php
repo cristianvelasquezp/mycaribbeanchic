@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header class="header <?php if (is_home()) { ?> header--home<?php } ?>">
+<header class="header <?php if (is_front_page()) echo 'header--home' ?>">
     <div class="container">
         <input type="checkbox" class="header__checkbox" id="bar-menu">
         <label for="bar-menu" class="header__bar-menu">
@@ -37,7 +37,7 @@
             </div>
             <nav class="header__menu--main" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul class="menu">
-                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Clothing</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link <?php if ( is_page('clothing') ) echo 'menu__item-link--active'?>" href="#" itemprop="url"><span itemprop="name">Clothing</span></a></li>
                     <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Jewelry</span></a></li>
                     <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Accessories</span></a></li>
                     <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Brands</span></a></li>
@@ -48,8 +48,3 @@
         <div class="clear"></div>
     </div>
 </header>
-<?php if (is_home()) { ?>
-<section class="hero hero--full hero--home" style="background-image: url(http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/hero-home-scaled.jpg)">
-    <div class="container"></div>
-</section>
-<?php }

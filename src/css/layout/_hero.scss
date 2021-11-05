@@ -5,8 +5,13 @@
   }
 
   &--home {
-  //  background-image: url("../../images/hero-home.jpg");
     height: 100vh;
+  }
+
+  &--sections {
+    height: 350px;
+    position: relative;
+    background-position: top center;
   }
 
   &--category {

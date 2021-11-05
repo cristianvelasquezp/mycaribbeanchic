@@ -27,6 +27,14 @@ body {
 .img {
   max-width: 100%; }
 
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
 body {
   font-family: "Proxima Nova", sans-serif;
   font-weight: 400;
@@ -45,6 +53,12 @@ body {
   font-weight: 500;
   font-size: 1.8rem;
   margin-bottom: 3rem; }
+
+.heading--hero {
+  color: #fff;
+  font-family: "Adam", sans-serif;
+  margin: 0;
+  font-weight: bold; }
 
 .heading-main {
   text-transform: uppercase; }
@@ -496,6 +510,11 @@ a {
 
 .hero--home {
   height: 100vh; }
+
+.hero--sections {
+  height: 350px;
+  position: relative;
+  background-position: top center; }
 
 .hero--category {
   height: calc( 100vh - 130px);
