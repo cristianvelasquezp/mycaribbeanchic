@@ -19,3 +19,52 @@
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
 }
+
+.slider {
+  &__items {
+    height: 65rem;
+    position: relative;
+    overflow: hidden;
+  }
+  &__item {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: transform 0.5s ease;
+
+    @include respontd( tab-port ) {
+      width: calc( 100% / 3 );
+    }
+  }
+
+  &__arrows {
+    position: relative;
+  }
+
+  &__arrow {
+    font-size: 5rem;
+    position: absolute;
+    z-index: 100;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--prev{
+      left: 2rem;
+
+      @include respontd(desktop) {
+        left: -3rem;
+      }
+    }
+
+    &--next{
+      right: 2rem;
+
+      @include respontd(desktop) {
+        right: -3rem;
+      }
+    }
+  }
+}

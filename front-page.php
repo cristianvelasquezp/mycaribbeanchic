@@ -5,267 +5,51 @@ get_header();
         <div class="container"></div>
     </section>
 
-    <?php
-        $cc_products = new WP_Query(array(
-            'posts_per_page'    => -1,
-            'post_type'         => 'product',
-            'meta_key'          => 'trending_looks',
-            'orderby'           => 'meta_value',
-            'order'             => 'ASC',
-        ));
 
-        var_dump($cc_products);
-    ?>
 
     <main class="main">
         <section class="slider-product">
             <div class="container">
                 <h2 class="heading-primary">Shop Our Trending Looks</h2>
 
-                <div class="splide splide--loop splide--ltr splide--draggable is-active is-initialized" id="splide01">
-                    <div class="splide__arrows"><button class="splide__arrow splide__arrow--prev" type="button" aria-controls="splide01-track" aria-label="Go to last slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button><button class="splide__arrow splide__arrow--next" type="button" aria-controls="splide01-track" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button></div><div class="splide__track" id="splide01-track" style="padding-left: 0px; padding-right: 0px;">
-                        <ul class="splide__list" id="splide01-list" style="transform: translateX(-2310px);">
-                            <li class="splide__slide splide__slide--clone" id="splide01-clone01" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone02" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone03" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone04" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone05" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone is-prev" id="splide01-clone06" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide is-active is-visible" id="splide01-slide01" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" tabindex="0">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide is-visible is-next" id="splide01-slide02" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" tabindex="0">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide is-visible" id="splide01-slide03" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" tabindex="0">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide" id="splide01-slide04" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide" id="splide01-slide05" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide" id="splide01-slide06" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide splide__slide--clone" id="splide01-clone07" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone08" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone09" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone10" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone11" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li><li class="splide__slide splide__slide--clone" id="splide01-clone12" style="margin-right: 15px; width: calc(((100% + 15px) / 3) - 15px);" aria-hidden="true">
-                                <div class="item-container">
-                                    <div class="item-container__image-box">
-                                        <figure>
-                                            <img class="img item-container__image" src="images/carousel-1.jpg" alt="category img">
-                                        </figure>
-                                    </div>
-                                    <div class="item-container__content-box">
-                                        <h3 class="item-container__brand"><a class="item-container__link" href="#" tabindex="-1">MAYGEL CORONEL</a></h3>
-                                        <h4 class="item-container__title"><a class="carousel-item__link" href="#" tabindex="-1">Blas Body</a></h4>
-                                        <h5 class="item-container__price">$210.00</h5>
-                                    </div>
-                                </div>
-                            </li></ul>
+                <div class="slider" >
+                    <div class="slider__arrows">
+                        <button class="slider__arrow slider__arrow--prev" type="button" data-goto="-1">
+                            <i class="fas fa-angle-left"></i>
+                        </button>
+                        <button class="slider__arrow slider__arrow--next" type="button" data-goto="1">
+                            <i class="fas fa-angle-right"></i>
+                        </button>
+                    </div>
+                    <div class="slider__items">
+                        <?php
+                        $trending_products = new WP_Query(array(
+                            'posts_per_page'    => 10,
+                            'post_type'         => 'product',
+                            'meta_key'          => 'trending_looks',
+                            'orderby'           => 'meta_value',
+                            'order'             => 'ASC',
+                        ));
+                        while($trending_products->have_posts()) {
+                            $trending_products->the_post();
+                            $brand = get_field('add_brand');
+                            $product = wc_get_product(get_the_ID());
+                            $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
+
+                            ?>
+                                <div class="slider__item"
+                                    data-id="<?php echo $product->get_id() ?>"
+                                    data-link ="<?php echo $product->get_permalink() ?>"
+                                    data-name="<?php echo $product->get_name(); ?>"
+                                    data-image = "<?php echo $thumbnail[0] ?>"
+                                    data-price = "<?php echo wc_get_price_to_display($product) ?>"
+                                    data-brand = "<?php if ($brand) echo $brand->post_title; ?>"
+                                    data-brand-link = "<?php if ($brand) echo get_permalink($brand->ID); ?>"
+                                ></div>
+                            <?php
+                        }
+                        ?>
+
                     </div>
                 </div>
             </div>
