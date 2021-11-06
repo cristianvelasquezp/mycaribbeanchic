@@ -60,23 +60,35 @@ get_header();
         the_category_section(18);
         the_category_section(19, 'right');
         the_category_section(20);
-        ?>
-        <section class="home-category">
-            <div class="container">
-                <div class="category__container right-side">
-                    <div class="home-category__image-container">
-                        <figure class="home-category__image-box">
-                            <img class="img home-category__image" src="images/about-img.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="home-category__content home-category__about">
-                        <h3 class="heading-tertiary">About Us</h3>
-                        <p><strong>Caribbean Chic</strong> works in partnership with designers and entrepreneurs across latin american to promote local art and talent globally. We are a multibrand store that dreams to make latin american talent visible to the world. <br>
-                            <img src="images/about-us-firma2.png" alt=""></p>
+
+        $about_us = new WP_Query(array(
+                'page_id' => '21',
+        ));
+
+        while ($about_us->have_posts()) {
+            $about_us->the_post();
+            ?>
+            <section class="home-category">
+                <div class="container">
+                    <div class="category__container right-side">
+                        <div class="home-category__image-container">
+                            <figure class="home-category__image-box">
+                                <img class="img home-category__image" src="<?php echo esc_url(the_field('image_home')); ?>" alt="">
+                            </figure>
+                        </div>
+                        <div class="home-category__content home-category__about">
+                            <h3 class="heading-tertiary"><?php echo get_the_title() ?></h3>
+                            <p><?php if (the_field('home_content') ) echo the_field('home_content') ?> <br>
+                                <img src="<?php echo esc_url(the_field('sign')); ?>" style="max-width: 200px" alt=""></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <?php
+        }
+
+        ?>
+
 
     </main>
 <?php
