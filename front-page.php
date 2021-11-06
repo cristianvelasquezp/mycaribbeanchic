@@ -24,7 +24,7 @@ get_header();
                     <div class="slider__items">
                         <?php
                         $trending_products = new WP_Query(array(
-                            'posts_per_page'    => 10,
+                            'posts_per_page'    => 12,
                             'post_type'         => 'product',
                             'meta_key'          => 'trending_looks',
                             'orderby'           => 'meta_value',
@@ -48,57 +48,19 @@ get_header();
                                 ></div>
                             <?php
                         }
+                        wp_reset_query();
                         ?>
 
                     </div>
                 </div>
             </div>
         </section>
-        <section class="home-category">
-            <div class="container">
-                <div class="category__container left-side">
-                    <div class="home-category__image-container">
-                        <figure class="home-category__image-box">
-                            <img class="img home-category__image" src="images/home-clothing.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="home-category__content">
-                        <h3 class="heading-tertiary">Clothing</h3>
-                        <p><a class="btn-text btn-text--category-home" href="#">Shop Now</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="home-category">
-            <div class="container">
-                <div class="category__container right-side">
-                    <div class="home-category__image-container">
-                        <figure class="home-category__image-box">
-                            <img class="img home-category__image" src="images/home-jewelry.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="home-category__content">
-                        <h3 class="heading-tertiary">Jewelry</h3>
-                        <p><a class="btn-text btn-text--category-home" href="#">Shop Now</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="home-category">
-            <div class="container">
-                <div class="category__container left-side">
-                    <div class="home-category__image-container">
-                        <figure class="home-category__image-box">
-                            <img class="img home-category__image" src="images/home-accessories.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="home-category__content">
-                        <h3 class="heading-tertiary">Accessories</h3>
-                        <p><a class="btn-text btn-text--category-home" href="#">Shop Now</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+        <?php
+        the_category_section(18);
+        the_category_section(19, 'right');
+        the_category_section(20);
+        ?>
         <section class="home-category">
             <div class="container">
                 <div class="category__container right-side">

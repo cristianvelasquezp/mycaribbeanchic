@@ -39,3 +39,35 @@
   }
 
 }
+
+@include respontd( tab-land ) {
+
+  .category__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .home-category__image-container,
+  .home-category__content{
+    width: 50%;
+  }
+
+  .right-side {
+    flex-direction: row-reverse;
+  }
+}
+
+@include respontd( tab-port ) {
+
+  .home-category {
+
+    &__image-container {
+      max-width: 46rem;
+      position: relative;
+      margin: auto;
+    }
+
+  }
+}

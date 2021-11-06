@@ -40,45 +40,13 @@
   .container {
     max-width: 1170px;
   }
-
-  .category__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
-  }
-
-  .home-category__image-container,
-  .home-category__content{
-    width: 50%;
-  }
-
-  .right-side {
-    flex-direction: row-reverse;
-  }
 }
 
 
   @media screen and (min-width: 992px) {
 
-
-
-
-
-
-
     .icon__search--desktop {
       display: inline-block !important;
-    }
-
-    .home-category {
-
-      &__image-container {
-        max-width: 46rem;
-        position: relative;
-        margin: auto;
-      }
-
     }
 
     .footer {
