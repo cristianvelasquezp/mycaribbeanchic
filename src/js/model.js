@@ -1,9 +1,7 @@
 import {data} from "autoprefixer";
 
 export const state = {
-    products: {
-
-    },
+    products: [],
     slider: [],
     sliderGoTo:{
         sliderLength: 0,
@@ -25,6 +23,21 @@ export const modelSlider =  function (data) {
         }
         state.slider.push(product);
         state.sliderGoTo.sliderLength = data.length;
+    })
+}
+
+export const modelProductList =  function (data) {
+    data.forEach( function (item) {
+        const product = {
+            id: item.dataset.id,
+            link: item.dataset.link,
+            name: item.dataset.name,
+            imageUrl: item.dataset.image,
+            price: item.dataset.price,
+            brand: item.dataset.brand,
+            brandLink: item.dataset.brandLink,
+        }
+        state.products.push(product);
     })
 }
 

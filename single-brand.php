@@ -14,6 +14,7 @@ $hero = get_field('background_image');
 <main class="main">
     <div class="container">
         <div class="row">
+            <div class="product-list">
             <?php
             $products = new WP_Query( array(
                 'post_type'         => 'product',
@@ -33,7 +34,7 @@ $hero = get_field('background_image');
                 $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
 
                 ?>
-                <div class="slider__item"
+                <div class="product__item"
                      data-id="<?php echo $product->get_id() ?>"
                      data-link ="<?php echo $product->get_permalink() ?>"
                      data-name="<?php echo $product->get_name(); ?>"
@@ -47,6 +48,7 @@ $hero = get_field('background_image');
             }
             wp_reset_query();
             ?>
+            </div>
         </div>
     </div>
 </main>

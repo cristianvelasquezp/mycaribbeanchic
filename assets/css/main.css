@@ -588,6 +588,9 @@ a {
 .product__img-item {
   margin-bottom: 3rem; }
 
+.item-container {
+  margin-bottom: 3rem; }
+
 .home-category {
   text-align: center; }
   .home-category:not(:last-child) {
