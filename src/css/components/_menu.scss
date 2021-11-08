@@ -61,6 +61,10 @@
 
   &__item-link{
 
+    &--active{
+      color: $color-primary;
+    }
+
     &:hover,
     &:active {
       color: $color-primary;

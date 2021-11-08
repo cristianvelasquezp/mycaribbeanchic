@@ -200,6 +200,8 @@ a {
     text-decoration: none;
     line-height: 5;
     padding: 1rem 2rem; }
+  .menu__item-link--active {
+    color: #84754e; }
   .menu__item-link:hover, .menu__item-link:active {
     color: #84754e; }
   .menu--tools {
@@ -465,7 +467,7 @@ a {
       .header__logo-box {
         float: left; } }
   .header__logo {
-    height: 7rem; }
+    height: 7rem !important; }
   .header__mobile-menu-background {
     position: absolute;
     width: 3rem;

@@ -37,9 +37,9 @@
             </div>
             <nav class="header__menu--main" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul class="menu">
-                    <li class="menu__item" ><a class="menu__item-link <?php if ( is_page('clothing') ) echo 'menu__item-link--active'?>" href="#" itemprop="url"><span itemprop="name">Clothing</span></a></li>
-                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Jewelry</span></a></li>
-                    <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Accessories</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link <?php if ( is_tax('product_cat', 'clothing') ) echo 'menu__item-link--active'?>" href="<?php echo site_url('/product-category/clothing/') ?>" itemprop="url"><span itemprop="name">Clothing</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link <?php if ( is_tax('product_cat', 'jewelry') ) echo 'menu__item-link--active'?>" href="<?php echo site_url('/product-category/jewelry/')?>" itemprop="url"><span itemprop="name">Jewelry</span></a></li>
+                    <li class="menu__item" ><a class="menu__item-link <?php if ( is_tax('product_cat', 'accessories') ) echo 'menu__item-link--active'?>" href="<?php echo site_url('/product-category/accessories/') ?>" itemprop="url"><span itemprop="name">Accessories</span></a></li>
                     <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Brands</span></a></li>
                     <li class="menu__item" ><a class="menu__item-link" href="#" itemprop="url"><span itemprop="name">Sale</span></a></li>
                 </ul>
