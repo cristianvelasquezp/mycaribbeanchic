@@ -4,7 +4,7 @@ function cc_files() {
     wp_enqueue_style('fonts-style',get_template_directory_uri() . '/assets/css/fonts.css', '', '1.0.0');
     wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.21');
 
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.1', true );
 }
 
 add_action('wp_enqueue_scripts', 'cc_files');
@@ -50,3 +50,4 @@ function the_category_section ($term_id, $image_side = 'left') {
     <?php
 
 }
+

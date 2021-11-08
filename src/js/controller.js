@@ -1,17 +1,17 @@
-import View from './view';
 import * as model from "./model";
-import view from "./view";
+import SliderView from "./view/slider-view"
 import {modelItemsPerSlider} from "./model";
 
-export const controlSlider = function() {
-    const data = View.getData();
+
+export const controlSlider = function(data2) {
+    const data = data2;
     model.modelSlider(data);
-    view.render(model.state.slider);
+    SliderView.render(model.state.slider);
 }
 
 const controlChangeSlider = function (data) {
     model.modelSliderChange(data);
-    view.sliderChange(model.state.sliderGoTo.currentSlide);
+    SliderView.sliderChange(model.state.sliderGoTo.currentSlide);
 }
 
 const controlItemsPerSlider = function (data) {
@@ -19,8 +19,8 @@ const controlItemsPerSlider = function (data) {
 }
 
 export const init = function () {
-    View.addHandlerClick(controlChangeSlider);
-    View.addHandlerLoad(controlItemsPerSlider);
-    View.addHandlerResize(controlItemsPerSlider);
+    SliderView.addHandlerClick(controlChangeSlider);
+    SliderView.addHandlerLoad(controlSlider, controlItemsPerSlider);
+    SliderView.addHandlerResize(controlItemsPerSlider);
 }
 
