@@ -2,7 +2,7 @@
 function cc_files() {
     wp_enqueue_style('fontawesome-style',get_template_directory_uri() . '/assets/css/all.min.css', '', '1.0.0');
     wp_enqueue_style('fonts-style',get_template_directory_uri() . '/assets/css/fonts.css', '', '1.0.0');
-    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.22');
+    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.24');
 
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.1', true );
 }
@@ -22,6 +22,7 @@ function cc_features() {
     register_nav_menu('quickLinksMenu', 'Quick Links Menu');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support( 'woocommerce' );
     add_image_size('page_banner', '1500', '300', true );
     add_image_size('product-list', '495', '743', true );
 }
@@ -51,3 +52,38 @@ function the_category_section ($term_id, $image_side = 'left') {
 
 }
 
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+
+function new_loop_shop_per_page( $cols ) {
+    // $cols contains the current number of products per page based on the value stored on Options –> Reading
+    // Return the number of products you wanna show per page.
+    $cols = -1;
+    return $cols;
+}
+
+function the_hero($image, $title) {
+    if (!$image) return
+    ?>
+    <section class="hero hero--full hero--sections" style="background-image: linear-gradient(to right bottom,rgba(133, 117, 77, .7), rgba(119, 102, 66, .7)), url(<?php echo $image['sizes']['page_banner'] ?>)">
+        <div class="container">
+            <div class="row">
+                <div class="text-box">
+                    <h1 class="heading-primary heading--hero"><?php echo $title; ?></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php
+}
+
+add_filter('woocommerce_breadcrumb_defaults', "cc_breadcrumb", 20);
+
+function cc_breadcrumb($data) {
+    $data['delimiter'] = "";
+    $data['wrap_before']    = "<div class='container'><div class='row''><ul class='breadcrumb__box'>";
+    $data['wrap_after']     = "</ul></div></div>";
+    $data['before']    = "<li class='breadcrumb__item'>";
+    $data['after']     = "</li>";
+
+    return $data;
+}
