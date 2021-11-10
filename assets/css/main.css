@@ -92,6 +92,14 @@ a {
 .brand--detail {
   font-size: 1.1rem; }
 
+.btn__pagination {
+  border: 0.1rem solid #d3ced2;
+  padding: 1.3rem;
+  line-height: 1.5rem; }
+  .btn__pagination--active {
+    background-color: #84754e;
+    color: #fff; }
+
 .btn-text:hover, .btn-text:active {
   color: #84754e; }
 
@@ -526,6 +534,9 @@ a {
 .hero--category {
   height: calc( 100vh - 130px);
   background-position: top center; }
+
+.product-pagination {
+  text-align: center; }
 
 .slider-product {
   padding-bottom: 7rem; }

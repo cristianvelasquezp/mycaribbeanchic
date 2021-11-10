@@ -1,7 +1,8 @@
 import * as model from "./model";
 import SliderView from "./view/slider-view"
 import ListView from "./view/list-view"
-import {modelItemsPerSlider, modelProductList} from "./model";
+import PaginationView from "./view/pagination-view"
+import {getResults, modelItemsPerSlider, modelProductList} from "./model";
 
 
 const controlSlider = function(data2) {
@@ -11,9 +12,10 @@ const controlSlider = function(data2) {
 }
 
 const controlList = function (data){
+    ListView.renderSpinner();
     model.modelProductList(data);
-    console.log(model.state.products);
-    ListView.render(model.state.products);
+    ListView.render(getResults(1));
+    PaginationView.render(model.state.results);
 }
 
 const controlChangeSlider = function (data) {
@@ -25,10 +27,17 @@ const controlItemsPerSlider = function (data) {
     model.modelItemsPerSlider(data);
 }
 
+const controlPagination = function (page) {
+    ListView.renderSpinner();
+    ListView.render(model.getResults(page));
+    PaginationView.update(model.state.results);
+}
+
 export const init = function () {
     SliderView.addHandlerClick(controlChangeSlider);
     SliderView.addHandlerLoad(controlSlider, controlItemsPerSlider);
     SliderView.addHandlerResize(controlItemsPerSlider);
-    ListView.addHandlerLoad(controlList)
+    ListView.addHandlerLoad(controlList);
+    PaginationView.addHandlerClick(controlPagination);
 }
 

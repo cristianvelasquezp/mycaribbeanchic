@@ -1,13 +1,21 @@
 import {data} from "autoprefixer";
 
 export const state = {
-    products: [],
+    results: {
+        products: [],
+        itemsPerPage: 12,
+        currentPage: 1,
+        itemsTotal: 0,
+    },
+
     slider: [],
     sliderGoTo:{
         sliderLength: 0,
         currentSlide: 0,
         itemsPerSlider: 3,
     },
+    pagination: {
+    }
 }
 
 export const modelSlider =  function (data) {
@@ -37,8 +45,10 @@ export const modelProductList =  function (data) {
             brand: item.dataset.brand,
             brandLink: item.dataset.brandLink,
         }
-        state.products.push(product);
+        state.results.products.push(product);
     })
+
+    this.state.results.itemsTotal = data.length;
 }
 
 export const modelSliderChange = function (goTo) {
@@ -57,4 +67,16 @@ export const modelItemsPerSlider = function (windowSize) {
     }else {
         state.sliderGoTo.itemsPerSlider = 3;
     }
+}
+
+export const modelItemsLoadMore = function () {
+
+}
+
+export const getResults = function ( page = 1) {
+    state.results.currentPage = page;
+    const start = (state.results.currentPage - 1) * state.results.itemsPerPage;
+    const end = start + state.results.itemsPerPage;
+
+    return state.results.products.slice(start,end);
 }

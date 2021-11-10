@@ -113,6 +113,11 @@ if ( woocommerce_product_loop() ) {
     ?>
             </div>
         </div>
+        <div class="row">
+            <div class="product-pagination">
+
+            </div>
+        </div>
     </div>
     <?php
 

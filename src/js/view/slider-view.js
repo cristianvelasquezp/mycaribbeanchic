@@ -80,7 +80,7 @@ class SliderView extends View {
     }
 
     _setHeightSliderItems() {
-        const height = this._containerSlider.querySelector('.slider__item').getBoundingClientRect().height;
+        const height = this._containerSlider?.querySelector('.slider__item').getBoundingClientRect().height;
         this._containerSlider.querySelector('.slider__items').style.height = `${height + 20}px`;
     }
 

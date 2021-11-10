@@ -1,5 +1,15 @@
 .btn{
 
+  &__pagination {
+    border: 0.1rem solid #d3ced2;
+    padding: 1.3rem;
+    line-height: 1.5rem;
+
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
 }
 
 .btn-text {
@@ -21,3 +31,4 @@
     }
   }
 }
+
