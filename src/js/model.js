@@ -15,6 +15,10 @@ export const state = {
         itemsPerSlider: 3,
     },
     pagination: {
+    },
+    variation: {
+        color:[],
+        colorSelected: null,
     }
 }
 
@@ -71,6 +75,20 @@ export const modelItemsPerSlider = function (windowSize) {
 
 export const modelItemsLoadMore = function () {
 
+}
+
+export const modelVariationColor = function (data) {
+    data.forEach(item => {
+        const color = {
+            name: item.dataset.colorName,
+            hex: item.dataset.colorHex,
+        }
+        state.variation.color.push(color);
+    });
+}
+
+export const modelVariationColorSelected = function(color) {
+    state.variation.colorSelected = color;
 }
 
 export const getResults = function ( page = 1) {

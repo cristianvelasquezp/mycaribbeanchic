@@ -5,11 +5,13 @@ class PaginationView extends View {
     _items;
 
     addHandlerClick(handler) {
-        this._contentElement.addEventListener('click', function (e){
-            e.preventDefault();
-            const btn = e.target.closest('.btn__pagination');
-            handler(btn.dataset.index);
-        })
+        if (this._contentElement) {
+            this._contentElement.addEventListener('click', function (e) {
+                e.preventDefault();
+                const btn = e.target.closest('.btn__pagination');
+                handler(btn.dataset.index);
+            })
+        }
     }
 
     _generateMarkup() {

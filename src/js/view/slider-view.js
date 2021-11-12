@@ -85,8 +85,8 @@ class SliderView extends View {
     }
 
     _setHeightArrows() {
-        const height = this._containerSlider.querySelector('.item-container__image-box').getBoundingClientRect().height;
-        this._containerSlider.querySelectorAll('.slider__arrow').forEach( arrow => arrow.style.top = `${height / 2 - 20}px`);
+        const height = this._containerSlider?.querySelector('.item-container__image-box').getBoundingClientRect().height;
+        this._containerSlider?.querySelectorAll('.slider__arrow').forEach( arrow => arrow.style.top = `${height / 2 - 20}px`);
     }
 
     _beforeEndRender() {

@@ -2,9 +2,9 @@
 function cc_files() {
     wp_enqueue_style('fontawesome-style',get_template_directory_uri() . '/assets/css/all.min.css', '', '1.0.0');
     wp_enqueue_style('fonts-style',get_template_directory_uri() . '/assets/css/fonts.css', '', '1.0.0');
-    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.27');
+    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.40');
 
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.1', true );
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.4', true );
 }
 
 add_action('wp_enqueue_scripts', 'cc_files');
@@ -25,6 +25,7 @@ function cc_features() {
     add_theme_support( 'woocommerce' );
     add_image_size('page_banner', '1500', '300', true );
     add_image_size('product-list', '495', '743', true );
+    add_image_size('product-detail', '570', '855', true );
 }
 
 add_action('after_setup_theme', 'cc_features');
