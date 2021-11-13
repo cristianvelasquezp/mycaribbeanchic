@@ -617,21 +617,27 @@ a {
   display: inline-block;
   border-radius: 50%; }
 
-.product__variation-item--color {
+.product__variation-item {
   list-style: none;
-  width: 5rem;
-  height: 5rem;
   display: inline-block;
-  border-radius: 50%;
   border: 1px solid #000;
-  padding: 0.3rem;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 0 0.5rem;
+  min-width: 4.1rem;
+  height: 4.1rem;
+  line-height: 3.8rem; }
+  .product__variation-item--color {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    padding: 0.3rem; }
+
+.item__default--selected {
+  background-color: #000;
+  color: #fff; }
 
 .item-container {
   margin-bottom: 3rem; }
-
-.variation-section .value select {
-  display: none !important; }
 
 .home-category {
   text-align: center; }

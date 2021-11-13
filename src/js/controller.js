@@ -2,6 +2,7 @@ import * as model from "./model";
 import SliderView from "./view/slider-view"
 import ListView from "./view/list-view"
 import PaginationView from "./view/pagination-view"
+import VariationColorView from "./view/variation-color-view"
 import VariationView from "./view/variation-view"
 import {getResults, modelItemsPerSlider, modelProductList, modelVariationColor} from "./model";
 
@@ -36,11 +37,22 @@ const controlPagination = function (page) {
 
 const controlVariationColor = function (data) {
     model.modelVariationColor(data);
-    VariationView.render(model.state.variation.color);
+    VariationColorView.render(model.state.variationColor.color);
 }
 const updateVariationColor = function (color) {
     model.modelVariationColorSelected(color);
-    VariationView.colorSelected(model.state.variation.colorSelected)
+    VariationColorView.colorSelected(model.state.variationColor.colorSelected)
+    if (model.state.variation.values.length)
+        VariationView.updateSelected();
+}
+const controlVariation = function (data) {
+    model.modelVariation(data);
+    VariationView.render(model.state.variation.values);
+}
+
+const updateVariation = function (item) {
+    model.modelVariationSelected(item);
+    VariationView.selected(model.state.variation.Selected)
 }
 
 export const init = function () {
@@ -49,7 +61,9 @@ export const init = function () {
     SliderView.addHandlerResize(controlItemsPerSlider);
     ListView.addHandlerLoad(controlList);
     PaginationView.addHandlerClick(controlPagination);
-    VariationView.addHandlerLoad(controlVariationColor);
-    VariationView.addHandlerClick(updateVariationColor);
+    VariationColorView.addHandlerLoad(controlVariationColor);
+    VariationColorView.addHandlerClick(updateVariationColor);
+    VariationView.addHandlerLoad(controlVariation);
+    VariationView.addHandlerClick(updateVariation);
 }
 

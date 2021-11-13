@@ -16,9 +16,13 @@ export const state = {
     },
     pagination: {
     },
-    variation: {
+    variationColor: {
         color:[],
         colorSelected: null,
+    },
+    variation: {
+        values: [],
+        selected: null,
     }
 }
 
@@ -83,12 +87,25 @@ export const modelVariationColor = function (data) {
             name: item.dataset.colorName,
             hex: item.dataset.colorHex,
         }
-        state.variation.color.push(color);
+        state.variationColor.color.push(color);
+    });
+}
+
+export const modelVariation = function (data) {
+    data.forEach(item => {
+        const value = {
+            name: item.dataset.name,
+        }
+        state.variation.values.push(value);
     });
 }
 
 export const modelVariationColorSelected = function(color) {
-    state.variation.colorSelected = color;
+    state.variationColor.colorSelected = color;
+}
+
+export const modelVariationSelected = function(item) {
+    state.variation.Selected = item;
 }
 
 export const getResults = function ( page = 1) {

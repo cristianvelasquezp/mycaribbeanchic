@@ -21,7 +21,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
         <?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
             <p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
         <?php else : ?>
-            <table class="variations variation-section" cellspacing="0">
+            <table class="variations variation-section product__variation-content" cellspacing="0">
                 <tbody>
                 <?php foreach ( $attributes as $attribute_name => $options ) : ?>
                     <tr>
@@ -36,10 +36,11 @@ do_action( 'woocommerce_before_add_to_cart_form' );
                                 )
                             );
                             echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+                            if ($attribute_name === 'pa_color') {
                             ?>
                             <ul class="product__variation-items--color">
                                 <?php
-                                    if ($attribute_name === 'pa_color') {
+
                                         foreach ($options as $color){
                                             $term = get_term_by('slug', $color, 'pa_color');
                                             $colorHex =  get_field("color", "pa_color_" . $term->term_id);
@@ -47,9 +48,24 @@ do_action( 'woocommerce_before_add_to_cart_form' );
                                             <li class="product__variation-item--color" style="border-color: <?php echo $colorHex ?>" data-color-name="<?php echo $color ?>" data-color-hex="<?php echo $colorHex ?>" tabindex="0" role="button"></li>
                                             <?php
                                         }
-                                    }
                                 ?>
                             </ul>
+                                <?php
+                            }else {
+                                ?>
+                                <ul class="product__variation-items">
+                                    <?php
+
+                                    foreach ($options as $item){
+                                        ?>
+                                        <li class="product__variation-item product__variation-item--default" data-name="<?php echo $item ?>" tabindex="0" role="button"></li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                                <?php
+                            }
+                                ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
