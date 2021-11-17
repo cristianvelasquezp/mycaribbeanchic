@@ -20,9 +20,8 @@ export const state = {
         color:[],
         colorSelected: null,
     },
-    variation: {
-        values: [],
-        selected: null,
+    variations: {
+        //Crear objetos por cada vairacion ejemplo color:{ items: [red, green, black], selected{red}}
     }
 }
 
@@ -91,22 +90,74 @@ export const modelVariationColor = function (data) {
     });
 }
 
-export const modelVariation = function (data) {
-    data.forEach(item => {
-        const value = {
-            name: item.dataset.name,
-        }
-        state.variation.values.push(value);
+//this function is going to set the variations object
+export const modelSetVariation = function (data) {
+    const variations = Array.from(data);
+    variations.forEach(variation => {
+        const id = variation.dataset.variation;
+        state.variations[id] = {
+            items: [],
+            selected: null,
+        };
+        _modelSetVariationItems(variation, id)
     });
+}
+
+export const modelResetVariation = function(id) {
+    //const items = state.variations[id].items;
+    //items.forEach( (item, index) => {
+        //item.disabled = false;
+        //item.index = index + 1;
+        modelUpdateVariation(id);
+    //});//
+    //state.variations[id].selected = null;
+}
+
+const _modelSetVariationItems = function (variation, id) {
+    const items = variation.querySelectorAll('li');
+    items.forEach( (item, index) => {
+        const newItem = {
+            name: item.dataset.name,
+            value: item.dataset.value,
+            disabled: false,
+            index: index + 1,
+        }
+        state.variations[id].items.push(newItem);
+    })
+}
+
+export const modelUpdateVariation = function (element){
+    const id = element.attributes.id.value;
+    const options = Array.from(element.options);
+    const enabledOption = {}
+    for( let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const name = option.attributes.value.value;
+        if (name !== '')
+            enabledOption[name] = i;
+    }
+    for (const item of state.variations[id].items) {
+        if(item.name in enabledOption) {
+           item.index = enabledOption[item.name];
+            item.disabled = false;
+        } else {
+            item.index = null;
+            item.disabled = true;
+        }
+    }
+    state.variations[id].selected = +element.selectedIndex;
+
+}
+
+export const modelUpdateIndexSelected = function(data) {
+    if ( !(data.id && data.index) ) return
+    state.variations[data.id].selected = data.index;
 }
 
 export const modelVariationColorSelected = function(color) {
     state.variationColor.colorSelected = color;
 }
 
-export const modelVariationSelected = function(item) {
-    state.variation.Selected = item;
-}
 
 export const getResults = function ( page = 1) {
     state.results.currentPage = page;

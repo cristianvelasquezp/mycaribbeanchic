@@ -32,6 +32,7 @@
     min-width: 4.1rem;
     height: 4.1rem;
     line-height: 3.8rem;
+    overflow: hidden;
 
     &--color {
       width: 5rem;
@@ -52,6 +53,26 @@
 }
 
 .item{
+  &__active {
+    pointer-events: none;
+  }
+  &__disabled{
+    opacity: 0.5;
+    position: relative;
+    pointer-events: none;
+    :after {
+      content: '';
+      border-left: 2px solid #000;
+      -webkit-transform: rotateX(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      right: 18px;
+      z-index: 1000;
+      display: inline-block;
+      height: 58px;
+      top: -10px;
+    }
+  }
   &__color{
     &--selected {
     }
@@ -61,7 +82,62 @@
 .variation-section {
   .value{
     select{
-      //display: none !important;
+      display: none !important;
     }
   }
+}
+
+.woocommerce div.product form.cart .button {
+  width: 100%;
+  display: inline-block;
+  border-radius: 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: $color-text-primary;
+  border: 0.1px solid $color-text-primary;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 3;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 1;
+  -webkit-transition: border-color 0.3s, background-color 0.3s, color 0.3s, opacity 0.3s;
+  -o-transition: border-color 0.3s, background-color 0.3s, color 0.3s, opacity 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s, opacity 0.3s;
+  font-family: "Proxima Nova";
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+
+  &:hover{
+    background-color: $color-text-primary;
+    color: $color-primary;
+  }
+
+  &.disabled {
+    cursor: no-drop;
+  }
+}
+
+.woocommerce div.product form.cart div.quantity {
+  display: none !important;
+}
+
+.product-content {
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+  position: sticky;
+  top: 11rem;
+}
+
+.woocommerce div.product form.cart .variations td {
+  vertical-align: middle;
 }

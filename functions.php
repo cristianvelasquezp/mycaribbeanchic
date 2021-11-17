@@ -2,9 +2,9 @@
 function cc_files() {
     wp_enqueue_style('fontawesome-style',get_template_directory_uri() . '/assets/css/all.min.css', '', '1.0.0');
     wp_enqueue_style('fonts-style',get_template_directory_uri() . '/assets/css/fonts.css', '', '1.0.0');
-    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.44');
+    wp_enqueue_style('main-styles',get_template_directory_uri() . '/assets/css/main.css', '', '1.0.54');
 
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.8', true );
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.19', true );
 }
 
 add_action('wp_enqueue_scripts', 'cc_files');
@@ -88,3 +88,24 @@ function cc_breadcrumb($data) {
 
     return $data;
 }
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+function product_template($class) {
+    $brand = get_field('add_brand');
+    $product = wc_get_product(get_the_ID());
+    $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
+
+    ?>
+    <div class="<?php echo $class ?>"
+         data-id="<?php echo $product->get_id() ?>"
+         data-link ="<?php echo $product->get_permalink() ?>"
+         data-name="<?php echo $product->get_name(); ?>"
+         data-image = "<?php echo $thumbnail[0] ?>"
+         data-price = "<?php echo wc_get_price_to_display($product) ?>"
+         data-brand = "<?php if ($brand) echo $brand->post_title; ?>"
+         data-brand-link = "<?php if ($brand) echo get_permalink($brand->ID); ?>"
+    ></div>
+    <?php
+}
+

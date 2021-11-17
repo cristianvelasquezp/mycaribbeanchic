@@ -85,21 +85,8 @@ if ( woocommerce_product_loop() ) {
         while ( have_posts() ) {
             the_post();
 
-            $brand = get_field('add_brand');
-            $product = wc_get_product(get_the_ID());
-            $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
+            product_template('product__item');
 
-            ?>
-            <div class="product__item"
-                 data-id="<?php echo $product->get_id() ?>"
-                 data-link ="<?php echo $product->get_permalink() ?>"
-                 data-name="<?php echo $product->get_name(); ?>"
-                 data-image = "<?php echo $thumbnail[0] ?>"
-                 data-price = "<?php echo wc_get_price_to_display($product) ?>"
-                 data-brand = "<?php if ($brand) echo $brand->post_title; ?>"
-                 data-brand-link = "<?php if ($brand) echo get_permalink($brand->ID); ?>"
-            ></div>
-            <?php
             /**
              * Hook: woocommerce_shop_loop.
              */

@@ -21,15 +21,14 @@ export default class View {
         this._beforeEndRender();
     }
 
-    update() {
+    update(data) {
+        this._data = data
         const newDom = document.createRange().createContextualFragment(this._generateMarkup());
         const newElements = Array.from(newDom.querySelectorAll('*'));
         const curElements = Array.from(this._contentElement.querySelectorAll('*'));
-        console.log(newElements, curElements);
-
         newElements.forEach( (newE, index) => {
             const curE = curElements[index];
-            console.log(newE, curE);
+
             if (!newE.isEqualNode(curE) && newE.firstChild?.nodeValue.trim() !== ''){
                 curE.textContent = newE.textContent;
             }

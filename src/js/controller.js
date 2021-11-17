@@ -4,7 +4,14 @@ import ListView from "./view/list-view"
 import PaginationView from "./view/pagination-view"
 import VariationColorView from "./view/variation-color-view"
 import VariationView from "./view/variation-view"
-import {getResults, modelItemsPerSlider, modelProductList, modelVariationColor} from "./model";
+import {
+    getResults,
+    modelItemsPerSlider,
+    modelProductList,
+    modelSetVariation, modelUpdateIndexSelected,
+    modelUpdateVariation,
+    modelVariationColor
+} from "./model";
 
 
 const controlSlider = function(data2) {
@@ -45,14 +52,28 @@ const updateVariationColor = function (color) {
     if (model.state.variation.values.length)
         VariationView.updateSelected();
 }
-const controlVariation = function (data) {
-    model.modelVariation(data);
-    VariationView.render(model.state.variation.values);
+
+const controlSetVariations = function (data) {
+    model.modelSetVariation(data);
+    variationLoop(true);
 }
 
-const updateVariation = function (item) {
-    model.modelVariationSelected(item);
-    VariationView.selected(model.state.variation.Selected)
+const controlUpdateVariations = function (data) {
+    VariationView.updateVariationOption(data.id, data.index);
+    variationLoop();
+}
+const controlResetVariation = function (ids) {
+    variationLoop(false )
+}
+
+const variationLoop = function(isRendering = false, isReset = false) {
+    for(const id of Object.keys(model.state.variations) ){
+        VariationView.setContentElement(id);
+        VariationView.setVariationId(id);
+        if (isRendering) VariationView.render(model.state.variations[id]);
+        model.modelUpdateVariation(VariationView.getSelectData());
+        VariationView.update(model.state.variations[id]);
+    }
 }
 
 export const init = function () {
@@ -61,9 +82,10 @@ export const init = function () {
     SliderView.addHandlerResize(controlItemsPerSlider);
     ListView.addHandlerLoad(controlList);
     PaginationView.addHandlerClick(controlPagination);
-    VariationColorView.addHandlerLoad(controlVariationColor);
-    VariationColorView.addHandlerClick(updateVariationColor);
-    VariationView.addHandlerLoad(controlVariation);
-    VariationView.addHandlerClick(updateVariation);
+    //VariationColorView.addHandlerLoad(controlVariationColor);
+    //VariationColorView.addHandlerClick(updateVariationColor);
+    VariationView.addHandlerLoad(controlSetVariations);
+    VariationView.addHandlerClick(controlUpdateVariations);
+    VariationView.addHandlerReset(controlResetVariation);
 }
 

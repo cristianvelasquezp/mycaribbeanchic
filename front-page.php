@@ -1,8 +1,12 @@
 <?php
 get_header();
 ?>
-    <section class="hero hero--full hero--home" style="background-image: url(http://localhost:8888/mycaribbeanchic/wp-content/uploads/2021/11/hero-home-scaled.jpg)">
-        <div class="container"></div>
+    <section class="hero hero--full hero--home" style="overflow: hidden; height: auto">
+        <div class="bg-video" style="opacity: 0.5">
+        <video class="" autoplay muted loop style="max-width: 100%">
+            <source src="https://www.mycaribbeanchic.com/wp-content/uploads/2021/11/IMG_0833.mp4" type="video/mp4">
+        </video>
+        </div>
     </section>
 
 
@@ -32,21 +36,7 @@ get_header();
                         ));
                         while($trending_products->have_posts()) {
                             $trending_products->the_post();
-                            $brand = get_field('add_brand');
-                            $product = wc_get_product(get_the_ID());
-                            $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
-
-                            ?>
-                                <div class="slider__item"
-                                    data-id="<?php echo $product->get_id() ?>"
-                                    data-link ="<?php echo $product->get_permalink() ?>"
-                                    data-name="<?php echo $product->get_name(); ?>"
-                                    data-image = "<?php echo $thumbnail[0] ?>"
-                                    data-price = "<?php echo wc_get_price_to_display($product) ?>"
-                                    data-brand = "<?php if ($brand) echo $brand->post_title; ?>"
-                                    data-brand-link = "<?php if ($brand) echo get_permalink($brand->ID); ?>"
-                                ></div>
-                            <?php
+                            product_template('slider__item');
                         }
                         wp_reset_query();
                         ?>

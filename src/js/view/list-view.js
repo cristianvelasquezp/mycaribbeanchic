@@ -9,6 +9,7 @@ class ListView extends View {
         const that = this;
         if (!this._contentElement) return;
         this._items = this._contentElement.querySelectorAll('.product__item');
+        console.log(this._items);
         window.addEventListener('load', function () {
             handler(that.getData());
         })
