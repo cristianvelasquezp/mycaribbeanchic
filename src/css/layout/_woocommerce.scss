@@ -1,0 +1,107 @@
+a.button,
+button.button,
+input.button,
+#review_form #submit {
+  background:$color-black;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background:$color-black;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  background:$color-black;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.woocommerce-MyAccount-navigation li:first-child {
+  border-top-width: 1px;
+}
+
+.woocommerce-MyAccount-navigation li {
+  border-color: #e4e4e4;
+  list-style: none;
+}
+
+.woocommerce-MyAccount-navigation li {
+  border-bottom: 1px solid #e3e3e3;
+  border-top: 0px solid #e3e3e3;
+}
+
+.woocommerce-MyAccount-navigation li > a {
+  display: block;
+  line-height: 36px;
+  padding: 10px 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.woocommerce-MyAccount-navigation li.is-active a,
+.woocommerce-MyAccount-navigation li a:hover {
+  color: $color-primary;
+}
+
+.woocommerce-ordering .woo-select,
+.variations_form .woo-select,
+.add_review a, .woocommerce .quantity,
+.woocommerce-page .quantity,
+.woocommerce .coupon input.apply-coupon,
+.woocommerce table.shop_table tr td.product-remove .remove,
+.woocommerce .button.update-cart-button,
+.shipping-calculator-form .woo-select,
+.woocommerce .shipping-calc-wrap button[name="calc_shipping"],
+.woocommerce #billing_country_field .woo-select,
+.woocommerce #shipping_country_field .woo-select,
+.woocommerce #review_form #respond .form-submit input,
+.woocommerce form .form-row input.input-text,
+.woocommerce table.my_account_orders .order-actions .button,
+.woocommerce #payment div.payment_box,
+.woocommerce .widget_price_filter .price_slider_amount .button,
+.woocommerce.widget .buttons a,
+.woocommerce input[name="apply_coupon"],
+.woocommerce .cart input[name="update_cart"],
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  background: #f7f7f7;
+  color: #222222;
+}
+
+.woocommerce nav.woocommerce-pagination,
+.woocommerce #content nav.woocommerce-pagination,
+.woocommerce-page nav.woocommerce-pagination,
+.woocommerce-page #content nav.woocommerce-pagination,
+.modal-body .comment-form-rating,
+.woocommerce form .form-row input.input-text,
+ul.checkout-process, #billing .proceed, ul.my-account-nav > li, .woocommerce #payment, .woocommerce-checkout p.thank-you, .woocommerce .order_details, .woocommerce-page .order_details, .review-order-wrap {
+  border-color: #e4e4e4;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: 1rem;
+  border: 1px solid $subtext;
+}
