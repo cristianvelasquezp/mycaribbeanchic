@@ -2,15 +2,16 @@ import * as model from "./model";
 import SliderView from "./view/slider-view"
 import ListView from "./view/list-view"
 import PaginationView from "./view/pagination-view"
-import VariationColorView from "./view/variation-color-view"
 import VariationView from "./view/variation-view"
+import SearchView from "./view/search-view"
+
 import {
     getResults,
     modelItemsPerSlider,
-    modelProductList,
+    modelProductList, modelSearchProduct,
     modelSetVariation, modelUpdateIndexSelected,
     modelUpdateVariation,
-    modelVariationColor
+    modelVariationColor, state
 } from "./model";
 
 
@@ -42,17 +43,6 @@ const controlPagination = function (page) {
     PaginationView.update(model.state.results);
 }
 
-const controlVariationColor = function (data) {
-    model.modelVariationColor(data);
-    VariationColorView.render(model.state.variationColor.color);
-}
-const updateVariationColor = function (color) {
-    model.modelVariationColorSelected(color);
-    VariationColorView.colorSelected(model.state.variationColor.colorSelected)
-    if (model.state.variation.values.length)
-        VariationView.updateSelected();
-}
-
 const controlSetVariations = function (data) {
     model.modelSetVariation(data);
     variationLoop(true);
@@ -76,16 +66,24 @@ const variationLoop = function(isRendering = false, isReset = false) {
     }
 }
 
+const controlGetSearchResults =  function (product) {
+    SearchView.renderSpinner();
+    console.log(product);
+
+    const data = model.modelSearchProduct(product);
+    console.log(data)
+}
+
+
 export const init = function () {
     SliderView.addHandlerClick(controlChangeSlider);
     SliderView.addHandlerLoad(controlSlider, controlItemsPerSlider);
     SliderView.addHandlerResize(controlItemsPerSlider);
     ListView.addHandlerLoad(controlList);
     PaginationView.addHandlerClick(controlPagination);
-    //VariationColorView.addHandlerLoad(controlVariationColor);
-    //VariationColorView.addHandlerClick(updateVariationColor);
     VariationView.addHandlerLoad(controlSetVariations);
     VariationView.addHandlerClick(controlUpdateVariations);
     VariationView.addHandlerReset(controlResetVariation);
+    SearchView.addHandlerKey(controlGetSearchResults);
 }
 

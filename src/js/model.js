@@ -22,6 +22,9 @@ export const state = {
     },
     variations: {
         //Crear objetos por cada vairacion ejemplo color:{ items: [red, green, black], selected{red}}
+    },
+    productSearched: {
+        url: 'http://localhost:8888/mycaribbeanchic/wp-json/cc/v1/search?term=',
     }
 }
 
@@ -165,4 +168,13 @@ export const getResults = function ( page = 1) {
     const end = start + state.results.itemsPerPage;
 
     return state.results.products.slice(start,end);
+}
+
+
+export const modelSearchProduct =  function (product){
+
+    const request = "holasss"
+
+    console.log(request)
+
 }

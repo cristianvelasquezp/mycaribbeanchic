@@ -15,6 +15,7 @@ class VariationView extends View {
 
     addHandlerClick(handler){
         const that = this;
+        if (!this._contentVariations) return;
         this._contentVariations.addEventListener('click', function (e) {
             const clicked = e.target.closest('.product__variation-item');
             if (!clicked) return;
@@ -28,6 +29,7 @@ class VariationView extends View {
 
     addHandlerReset(handler) {
         const that = this;
+        if (!this._contentVariations) return;
         this._contentVariations.addEventListener('click', function (e) {
             const clicked = e.target.closest('.reset_variations');
             if (!clicked) return

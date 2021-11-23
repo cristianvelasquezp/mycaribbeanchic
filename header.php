@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header class="header <?php if (is_front_page()) echo 'header--home' ?>">
+<header class="header <?php if (is_front_page()) echo '' ?>">
     <div class="container">
         <input type="checkbox" class="header__checkbox" id="bar-menu">
         <label for="bar-menu" class="header__bar-menu">

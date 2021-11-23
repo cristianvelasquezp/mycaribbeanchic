@@ -17,7 +17,6 @@ class PaginationView extends View {
     _generateMarkup() {
         const totalPages = Math.ceil(this._data.itemsTotal / this._data.itemsPerPage);
         const currentPage = +this._data.currentPage;
-        console.log(currentPage);
 
         let html = '';
         for (let i = 1; i <= totalPages; i++ ) {

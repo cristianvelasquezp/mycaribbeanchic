@@ -28,6 +28,20 @@
         </div>
     </div>
 </footer>
+<div class="search-container">
+    <div class="container">
+        <div class="row">
+            <button class="search-container__exit"><i class="far fa-times-circle"></i></button>
+            <div class="search-container__form">
+                <input type="text" class="search-container__input-text" placeholder="Search...">
+                <button class="search-container__button"><i class="fa fa-search search-container__icon--search" aria-hidden="true"></i></button>
+            </div>
+            <div class="search-container__results">
+
+            </div>
+        </div>
+    </div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>
