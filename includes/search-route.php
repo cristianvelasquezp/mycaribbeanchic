@@ -23,7 +23,7 @@ function cc_search_results($data) {
 
         $brand = get_field('add_brand');
         $product = wc_get_product(get_the_ID());
-        $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-list');
+        $thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'product-search');
 
         $obj = array(
             'name'      => get_the_title(),

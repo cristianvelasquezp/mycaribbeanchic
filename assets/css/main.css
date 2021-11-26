@@ -16,6 +16,38 @@
   --wc-content-bg: #fff;
   --wc-subtext: #767676; }
 
+@-webkit-keyframes spinnerLoop {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spinnerLoop {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 *,
 *::after,
 *::before {
@@ -54,6 +86,31 @@ button {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
+
+.spinner .fa-circle-notch {
+  -webkit-animation-name: spinnerLoop;
+          animation-name: spinnerLoop;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem; }
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin: .1rem;
+  border-radius: 50%;
+  border: 0.5rem solid #84754e;
+  border-color: #84754e transparent #84754e transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite; }
 
 body {
   font-family: "Proxima Nova", sans-serif;
@@ -205,17 +262,15 @@ a {
   .menu__item--tools {
     padding: 1rem 0;
     cursor: pointer; }
-  .menu__item--search {
-    width: 100%; }
-    @media (min-width: 1200px) {
-      .menu__item--search .form--search {
-        display: none; } }
-    @media (min-width: 1200px) {
-      .menu__item--search .icon__search--desktop {
-        display: inline-block !important; } }
-    @media (min-width: 1200px) {
-      .menu__item--search {
-        width: auto; } }
+  @media (min-width: 1200px) {
+    .menu__item--search .form--search {
+      display: none; } }
+  @media (min-width: 1200px) {
+    .menu__item--search .icon__search--desktop {
+      display: inline-block !important; } }
+  @media (min-width: 1200px) {
+    .menu__item--search {
+      width: auto; } }
   .menu__item--cart > .sub-menu {
     list-style: none; }
   @media (min-width: 1200px) {
@@ -361,6 +416,32 @@ a {
     .shopping-cart__go-shop:hover, .shopping-cart__cart-btn:hover, .shopping-cart__checkout-btn:hover {
       background-color: #84754e;
       color: #fff; }
+
+.product-card {
+  position: relative; }
+  .product-card__image-box {
+    width: 7.2rem;
+    float: left; }
+  .product-card__image {
+    max-width: 100%; }
+  .product-card__content-box {
+    width: calc( 100% - 10rem);
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 10rem; }
+  .product-card__text {
+    display: block; }
+    .product-card__text--brand {
+      font-size: 1.1rem;
+      text-transform: uppercase; }
+    .product-card__text--name {
+      font-size: 2rem;
+      font-weight: 300; }
+    .product-card__text a:hover {
+      color: #84754e; }
 
 .search-container {
   width: 100%;
@@ -921,12 +1002,7 @@ ul.checkout-process, #billing .proceed, ul.my-account-nav > li, .woocommerce #pa
   font-size: 1.8rem;
   padding: 0 0.8rem; }
 
-.icon__search--desktop {
-  display: none !important; }
-
 @media screen and (min-width: 992px) {
-  .icon__search--desktop {
-    display: inline-block !important; }
   .footer__container {
     display: -webkit-box;
     display: -ms-flexbox;

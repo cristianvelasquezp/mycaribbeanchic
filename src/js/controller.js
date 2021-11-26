@@ -67,11 +67,9 @@ const variationLoop = function(isRendering = false, isReset = false) {
 }
 
 const controlGetSearchResults =  function (product) {
-    SearchView.renderSpinner();
-    console.log(product);
-
-    const data = model.modelSearchProduct(product);
-    console.log(data)
+    model.modelSearchProduct(product).then(data => {
+        SearchView.render(data);
+    });
 }
 
 

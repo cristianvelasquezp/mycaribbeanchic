@@ -4,7 +4,7 @@ export default class View {
     renderSpinner() {
         const spinner = `
             <div class='spinner'>
-                <i class="fas fa-circle-notch"></i>
+                <div class="lds-dual-ring"></div>
             </div>
         `;
 

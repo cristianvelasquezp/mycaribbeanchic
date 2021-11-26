@@ -1,0 +1,39 @@
+.product-card{
+  position: relative;
+
+  &__image-box {
+    width: 7.2rem;
+    float: left;
+  }
+
+  &__image{
+    max-width: 100%;
+  }
+
+  &__content-box{
+    width: calc( 100% - 10rem);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10rem;
+  }
+
+  &__text{
+    display: block;
+
+    &--brand{
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    &--name{
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    a:hover{
+      color: $color-primary;
+    }
+  }
+
+}

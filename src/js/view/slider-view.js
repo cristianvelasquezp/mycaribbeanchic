@@ -20,7 +20,6 @@ class SliderView extends View {
         const that = this;
         if(!this._containerSlider) return
         this._sliderItems = this._containerSlider.querySelectorAll('.slider__item');
-        console.log(this.getData());
         handlerData(this.getData())
         window.addEventListener('load', function () {
             handler(this.innerWidth);

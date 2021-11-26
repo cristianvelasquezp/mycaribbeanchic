@@ -171,10 +171,9 @@ export const getResults = function ( page = 1) {
 }
 
 
-export const modelSearchProduct =  function (product){
-
-    const request = "holasss"
-
-    console.log(request)
-
+export const modelSearchProduct = function (product){
+    const res = fetch(`${state.productSearched.url}${product}`);
+    return res.then( data => {
+        return data.json();
+    })
 }

@@ -12,6 +12,7 @@
 @import "components/item";
 @import "components/menu";
 @import "components/cart";
+@import "components/product-card";
 @import "components/search";
 
 @import "layout/breadcrumb";
@@ -33,12 +34,6 @@
   padding: 0 0.8rem;
 }
 
-.icon__search--desktop {
-  display: none !important;
-}
-
-
-
 @include respontd( table-port ) {
   .container {
     max-width: 1170px;
@@ -47,10 +42,6 @@
 
 
   @media screen and (min-width: 992px) {
-
-    .icon__search--desktop {
-      display: inline-block !important;
-    }
 
     .footer {
 

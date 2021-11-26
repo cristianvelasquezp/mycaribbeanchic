@@ -22,13 +22,6 @@
             <div class="header__menu--tools">
                 <ul class="menu menu--tools">
                     <li class="menu__item menu__item--tools menu__item--search">
-                        <form class="form form--search" name="search" action="#">
-                            <input class="input input--search" type="text" placeholder="Search...">
-                            <span class="input__search-bottom">
-                                <input class="input input--search-bottom" type="submit" value="Search">
-                                <i class="input__search-icon icon fas fa-search"></i>
-                            </span>
-                        </form>
                         <i class="icon icon__search--desktop fas fa-search"></i>
                     </li>
                     <li class="menu__item menu__item--tools"><i class="icon far fa-user"></i></li>
