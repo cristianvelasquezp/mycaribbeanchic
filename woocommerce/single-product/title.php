@@ -6,6 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 $brand = get_field('add_brand', $product->get_id());
 ?>
-<h4 class="brand brand--detail"><?php echo $brand->post_title ?></h4>
+<h4 class="brand brand--detail"><?php if($brand) { echo $brand->post_title; } ?></h4>
 <?php
 the_title( '<h3 class="product__title">', '</h3>' );
